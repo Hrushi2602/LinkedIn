@@ -1,0 +1,6 @@
+
+kafka.topic.user-random-topic: user-random-topic
+
+spring:
+  kafka:
+    bootstrap-servers: 172.27.133.187:9092
