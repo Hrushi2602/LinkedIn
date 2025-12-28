@@ -1,6 +1,6 @@
 spring.application.name: api-gateway
 
-server.port: 8087
+server.port: 8089
 eureka.client.service-url.defaultZone: http://localhost:8761/eureka
 
 jwt.secretKey: gysgdg6673wehgdsjhv726387e6dghagt782wgjhgj76hwgsguhu
@@ -29,3 +29,10 @@ spring:
             - StripPrefix=2
             - name: AuthenticationFilter
 
+        - id: connection-service
+          uri: lb://CONNECTION-SERVICE
+          predicates:
+            - Path=/api/v1/connection/**
+          filters:
+            - StripPrefix=2
+            - name: AuthenticationFilter
