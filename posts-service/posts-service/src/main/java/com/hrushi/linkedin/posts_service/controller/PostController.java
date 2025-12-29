@@ -27,8 +27,8 @@ public class PostController {
     @PostMapping
     public ResponseEntity<PostDto> createPost(@RequestBody PostCreateDto postDto, HttpServletRequest httpServletRequest) {
 
+        //String userId = httpServletRequest.getHeader("X-user-id");
         PostDto createdPost = postService.createPost(postDto, 1L);
-
 
         return new ResponseEntity<>(createdPost, HttpStatus.CREATED);
     }
